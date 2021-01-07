@@ -1,0 +1,1157 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="css/styles.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+		<script type="text/javascript" src="js/story.content.js"></script>
+	</head>
+
+	<body>
+		<div class="show-none" id="credit-page">
+			<div class="background-panel"></div>
+		</div>
+		<div class="show-none" id="start-page">
+			<div class="background-panel"></div>
+			<input type="image" id="btn-play-logo-video" class="buttons" src="Assets/common/0_start.png"/>
+		</div>
+		<div class="show-none" id="cover-page">
+			<div class="background-panel"></div>
+			<image id="img-cover" src="Assets/common/cover.png"/>
+			<div class="enter-wrapper">
+				<div class="d-flex" style="justify-content: center;">
+					<input type="image" id="btn-enter" class="buttons" src="Assets/common/enter.png"/>
+				</div>
+			</div>
+		</div>
+		<video class="show-none logo-video" id="st-logo-video" src="Assets/common/0_logo.mp4"></video>
+		<video class="show-none logo-video" id="en-logo-video" src="Assets/common/0_logo.mp4"></video>
+		<div class="show-none" id="toc-page">
+			<div class="background-panel"></div>
+			<image id="bg-toc" src="Assets/common/page_bg_toc.png"/>
+			<image id="img-textbook-cover" src="Assets/common/cover_1.png" />
+			<div id="toc">
+				<div id="toc-contents" style="padding:40px;">
+				</div>
+			</div>
+		</div>
+
+		<div class="show-none" id="control-bar">
+			<div class="d-flex">
+				<div><input type="image" class="btn-ctrl-menu buttons" src="Assets/common/button_menu.png"/></div>
+				<div class="show-none" id="control-panel">
+					<div class="d-flex flex-wrap">
+						<input type="image" class="btn-page-nav buttons" src="Assets/common/button_page.png"/>	
+						<input type="image" class="btn-p2s enable buttons" data-val="play" src="Assets/common/button_play.png"/>
+						<input type="image" class="btn-p2s enable buttons" data-val="pause" src="Assets/common/button_play_pause.png"/>
+						<input type="image" class="btn-p2s disable buttons" src="Assets/common/button_play_x.png"/>
+						<input type="image" class="btn-prev enable buttons" src="Assets/common/button_play_back.png"/>
+						<input type="image" class="btn-prev disable buttons" src="Assets/common/button_play_back_x.png"/>
+						<input type="image" class="btn-next enable buttons" src="Assets/common/button_play_next.png"/>
+						<input type="image" class="btn-next disable buttons" src="Assets/common/button_play_next_x.png"/>
+
+						<input type="image" class="btn-font enable buttons" data-val="small" src="Assets/common/button_play_font.png"/>
+						<input type="image" class="btn-font enable buttons" data-val="medium" src="Assets/common/button_play_font_med.png"/>
+						<input type="image" class="btn-font enable buttons" data-val="large" src="Assets/common/button_play_font_lar.png"/>
+						<input type="image" class="btn-font disable buttons" data-val="small" src="Assets/common/button_play_font_x.png"/>
+						<input type="image" class="btn-font disable buttons" data-val="medium" src="Assets/common/button_play_font_med_x.png"/>
+						<input type="image" class="btn-font disable buttons" data-val="large" src="Assets/common/button_play_font_lar_x.png"/>
+
+						<input type="image" class="btn-speed enable buttons" data-val="slow" src="Assets/common/button_play_speed_1.png"/>
+						<input type="image" class="btn-speed enable buttons" data-val="normal" src="Assets/common/button_play_speed_2.png"/>
+						<input type="image" class="btn-speed disable buttons" data-val="slow" src="Assets/common/button_play_speed_1_x.png"/>
+						<input type="image" class="btn-speed disable buttons" data-val="normal" src="Assets/common/button_play_speed_2_x.png"/>
+
+						<input type="image" class="btn-slider enable buttons" data-val="obo" src="Assets/common/button_play_slider_l.png"/>
+						<input type="image" class="btn-slider enable buttons" data-val="all" src="Assets/common/button_play_slider_r.png"/>
+						<input type="image" class="btn-slider disable buttons" data-val="obo" src="Assets/common/button_play_slider_l_x.png"/>
+						<input type="image" class="btn-slider disable buttons" data-val="all" src="Assets/common/button_play_slider_r_x.png"/>
+
+						<input type="image" class="btn-help buttons" src="Assets/common/button_help.png"/>
+						<input type="image" class="btn-exit buttons" src="Assets/common/button_exit.png"/>
+					</div>
+					<div class="show-none" id="font-options">
+						<div style="color: white; font-size: 20">Font</div>
+						<div id="small">Small</div>
+						<div id="medium">Medium</div>
+						<div id="large">Large</div>
+					</div>
+					<div class="show-none" id="speed-options">
+						<div style="color: white; font-size: 20">Playback speed</div>
+						<div id="slow">Slow</div>
+						<div id="normal">Normal</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="show-none" id="page-nav">
+			<div><input type="image" id="btn-prev" class="buttons" src="Assets/common/button_back.png"/></div>
+			<div><input type="image" id="btn-next" class="buttons" src="Assets/common/button_next.png"/></div>
+		</div>
+		<audio id="aud-intro" src=""></audio>
+		<audio id="aud-section" src=""></audio>
+		<audio id="aud-vocab" src=""></audio>
+		<audio id="aud-common" src=""></audio>
+		<div id="book-story-page">
+		</div>
+
+		<div class="show-none" id="chapter-frames">
+			<div class="overlay"></div>
+			<div id="chapter-frames-header">
+				<image id="img-chapter" class="" src="Assets/page/head_C1.png">
+				<input type="image" class="buttons btn-close" src="Assets/common/button_close.png"/>
+				<br>
+				<input type="image" id="btn-toc" class="buttons" src="Assets/page/but_toc.png"/>
+				<input type="image" id="btn-chapter" data-chapter="C1" class="buttons" src="Assets/page/but_c1.png">
+			</div>
+			<br>
+			<div id="chapter-frames-content" class="d-flex flex-wrap">
+			</div>
+		</div>
+		<div class="show-none" id="help-board">
+			<div class="overlay"></div>
+			<image id="img-help" src="Assets/common/help.png"/>
+			<input type="image" class="btn-close buttons" src="Assets/common/button_close.png"/>
+		</div>
+		<div class="show-none" id="chapter-end-board">
+			<div class="overlay"></div>
+			<div id="header">
+				<input type="image" class="buttons btn-close" src="Assets/common/button_close.png"/>
+				<image id="img-header" src="Assets/common/end_top_c1.png">
+			</div>
+			<div class="btn-group d-flex flex-wrap">
+				<input type="image" id="btn-c1-intro" class="buttons" src="Assets\common\end_c1.png">
+				<input type="image" id="btn-c2-intro" class="buttons" src="Assets\common\end_c2.png">
+				<input type="image" id="btn-credit" class="buttons" src="Assets\common\end_credits.png">
+			</div>
+		</div>
+		
+	</body>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+
+			/********* UI *********/
+			function ui_show_element (selector) {
+				$(selector).show()
+			}
+			function ui_hide_element (selector) {
+				$(selector).hide()
+			}
+			function ui_empty_element (selector) {
+				$(selector).empty()
+			}
+			function ui_append_element (selector, element) {
+				$(selector).append(element)
+			}
+
+			function start_page () {
+				ui_show_element('#start-page')
+				$('#btn-play-logo-video').click(function () {
+					ui_hide_element('#start-page')
+					play_logo_video()
+				})
+			}
+			function play_logo_video () {
+				ui_show_element('#st-logo-video')
+				let logoVideo = document.getElementById('st-logo-video')
+				logoVideo.addEventListener('ended', function () {
+					ui_hide_element('#st-logo-video')
+					cover_page()
+				})
+				logoVideo.play()
+			}
+			function cover_page () {
+				ui_show_element('#cover-page')
+				audPlayerForCommon.src = 'Assets/C1A/aud/Enter.mp3'
+				audPlayerForCommon.play()
+				$('#btn-enter').click(function () {
+					if (!audPlayerForCommon.paused)
+						audPlayerForCommon.pause()
+					ui_hide_element('#cover-page');
+					toc_page()
+				})
+			}
+
+			var menuList = [
+				{
+					chapter: 'C1',
+					name: 'Chapter 1: Early Singapore',
+					sub_topics: [
+						{
+							name: "Constructing Knowledge of Singapore@s Past",
+							img: "Assets/common/cover_1a.png",
+							part: 'A',
+							
+						},
+						{
+							name: "Singapore Before 1819",
+							img: "Assets/common/cover_1b.png",
+							part: 'B',
+				
+						},
+						{
+							name: "The Founding of Singapore as a British Trading Port",
+							img: "Assets/common/cover_1c.png",
+							part: 'C',
+				
+						},
+					]
+				},
+				{
+					chapter: 'C2',
+					name: 'Chapter 2: Settlers in Singapore (1892 - 1930s)',
+					sub_topics: [
+						{
+							name: "Traders from Many Different Lands",
+							img: "Assets/common/cover_2a.png",
+							part: 'A'
+						},
+						{
+							name: "The Different Groups of Settlers",
+							img: "Assets/common/cover_2b.png",
+							part: 'B'
+						},
+						{
+							name: "Reasons for Coming to Singapore",
+							img: "Assets/common/cover_2c.png",
+							part: 'C'
+						},
+					]
+				},
+			]
+
+			function toc_page () {
+				page_nav_btn()
+				control_bar()
+				ui_empty_element('#book-story-page')
+				ui_show_element('#toc-page')
+				ui_empty_element('#toc-page #toc-contents')
+				for (var chInx = 0; chInx < menuList.length; chInx++) {
+					var item = menuList[chInx]
+					var chapterElement = "<div class='ch-title'>" + item.name + "</div>"
+					ui_append_element('#toc-page #toc-contents', chapterElement)
+
+					for (var tpInx = 0; tpInx < item.sub_topics.length; tpInx++) {
+						var topic = item.sub_topics[tpInx]
+						var topicElement = document.createElement('div')
+						topicElement.setAttribute('class', 'buttons toc-buttons')
+						topicElement.setAttribute('data-obj', JSON.stringify(topic))
+						topicElement.setAttribute('data-page', JSON.stringify({chapter: item.chapter, part: topic.part, page: 0}))
+						topicElement.innerText = topic.name.replace("@", "'")
+						ui_append_element('#toc-page #toc-contents', topicElement)
+					}
+				}
+
+				audPlayerForCommon.src = 'Assets/C1A/aud/Toc.mp3'
+				audPlayerForCommon.play()
+
+				$('.toc-buttons').click(function () {
+					gPresentPage = JSON.parse($(this).attr('data-page'))
+					init_page_props()
+					draw_page()
+				})
+				$('.toc-buttons').hover(function () {
+					var topic = JSON.parse($(this).attr('data-obj'))
+					$('#img-textbook-cover').attr('src', topic.img)
+				})
+			}
+			start_page()
+			/************* COMMON CONTROL *************/
+
+			
+			var gFontSize = 'small' //Small, Medium, Large
+			var gAudioPlaySpeed = 'normal' // Low, Normal
+			var gAudioPlayMode = 'obo' // All, Sec by Sec
+			var gAudioPlayStatus = 'pause' // OnPlay, OnStop
+
+			var gPresentPage = null
+			var gPresentBox = 0
+			var gPopup = false
+			
+			var audPlayerForIntro = document.getElementById('aud-intro')
+			var audPlayerForSec = document.getElementById('aud-section')
+			var audPlayerForvocab = document.getElementById('aud-vocab')
+			var audPlayerForCommon = document.getElementById('aud-common')
+			var bDone = false
+
+			var winActiveSupervisor
+			var activateTime = 0
+			function stop_audio () {
+				if (!audPlayerForIntro.paused)
+					audPlayerForIntro.pause()
+				if (!audPlayerForSec.paused)
+					audPlayerForSec.pause()
+				if (!audPlayerForvocab.paused)
+					audPlayerForvocab.pause()
+				if (!audPlayerForCommon.paused)
+					audPlayerForCommon.pause()
+			}	
+			function control_panel_enable_btn() {
+				ui_show_element('#control-bar .buttons.enable')
+				ui_hide_element('#control-bar .buttons.disable')
+
+				ui_hide_element('#control-bar #control-panel .btn-p2s.enable')
+				ui_show_element('#control-bar #control-panel .btn-p2s.enable[data-val="'+gAudioPlayStatus+'"]')
+
+				ui_hide_element('#control-bar #control-panel .btn-font.enable')
+				ui_show_element('#control-bar #control-panel .btn-font.enable[data-val="'+gFontSize+'"]')
+
+				ui_hide_element('#control-bar #control-panel .btn-speed.enable')
+				ui_show_element('#control-bar #control-panel .btn-speed.enable[data-val="'+gAudioPlaySpeed+'"]')
+
+				ui_hide_element('#control-bar #control-panel .btn-slider.enable')
+				ui_show_element('#control-bar #control-panel .btn-slider.enable[data-val="'+gAudioPlayMode+'"]')
+
+				if (is_on_first_section()) {
+					ui_hide_element('#control-bar #control-panel .btn-prev.enable')
+					ui_show_element('#control-bar #control-panel .btn-prev.disable')
+				}
+				if (is_on_last_section()) {
+					ui_hide_element('#control-bar #control-panel .btn-next.enable')
+					ui_show_element('#control-bar #control-panel .btn-next.disable')	
+				}
+			}
+			function control_panel_diable_btn() {
+				ui_show_element('#control-bar .buttons.disable')
+				ui_hide_element('#control-bar .buttons.enable')
+
+				ui_hide_element('#control-bar #control-panel .btn-font.disable')
+				ui_show_element('#control-bar #control-panel .btn-font.disable[data-val="'+gFontSize+'"]')				
+
+				ui_hide_element('#control-bar #control-panel .btn-speed.disable')
+				ui_show_element('#control-bar #control-panel .btn-speed.disable[data-val="'+gAudioPlaySpeed+'"]')
+
+				ui_hide_element('#control-bar #control-panel .btn-slider.disable')
+				ui_show_element('#control-bar #control-panel .btn-slider.disable[data-val="'+gAudioPlayMode+'"]')
+			}
+			function control_bar () {
+				ui_show_element('#control-bar')
+				ui_hide_element('#font-options')
+				ui_hide_element('#speed-options')
+				if (gPopup) {
+					control_panel_enable_btn()
+					if ($('#control-bar #control-panel').css('display') == 'none') {
+						$('#control-bar .btn-ctrl-menu').click()
+					}	
+				} else {
+					control_panel_diable_btn()
+				}
+			}
+			function init_control_bar () {
+				$('.btn-ctrl-menu').click(function () {
+					if ($('#control-panel').css('display') == 'none') {
+						this.src = "Assets/common/button_menu_s.png"
+						ui_show_element('#control-bar #control-panel')
+					} else {
+						this.src = "Assets/common/button_menu.png"
+						ui_hide_element('#control-bar #control-panel')
+						ui_hide_element('#font-options')
+						ui_hide_element('#speed-options')
+					}
+				})
+				$('.btn-page-nav').click(function () {
+					ui_show_element('#chapter-frames')
+					chapter_frames()
+				})
+				$('.btn-p2s.enable').click(function () {
+					if (gAudioPlayStatus == 'play') {
+						if (bDone) {
+							section_board(gPresentBox)
+						} else {
+							audPlayerForSec.play()
+						}
+						gAudioPlayStatus = 'pause'
+					}
+					else if (gAudioPlayStatus == 'pause') {
+						gAudioPlayStatus = 'play'
+						audPlayerForSec.pause()
+					}
+					control_bar()
+				})
+				$('.btn-prev.enable').click(function () {
+					section_board(parseInt(gPresentBox) - 1)
+				})
+				$('.btn-next.enable').click(function () {
+					section_board(parseInt(gPresentBox) + 1)
+				})
+				$('.btn-font.enable').click(function () {
+					if ($('#font-options').css('display') == 'none') {
+						var left = $(this).offset().left - $('#control-bar #control-panel').offset().left + $('#control-bar .btn-ctrl-menu').width()
+						ui_show_element('#font-options')
+						$('#font-options').css('left', left)
+						$('#font-options').css('top', 'calc(-15vh + 15px)')
+					} else {
+						ui_hide_element('#font-options')
+					}
+				})
+				$('.btn-speed.enable').click(function () {
+					if ($('#speed-options').css('display') == 'none') {
+						var left = $(this).offset().left - $('#control-bar #control-panel').offset().left + $('#control-bar .btn-ctrl-menu').width()
+						ui_show_element('#speed-options')
+						$('#speed-options').css('left', left)
+						$('#speed-options').css('top', 'calc(-15vh + 15px)')
+					} else {
+						ui_hide_element('#speed-options')
+					}
+				})
+				$('.btn-slider.enable').click(function () {
+					gAudioPlayMode = gAudioPlayMode == 'obo' ? 'all' : 'obo'
+					control_bar()
+				})
+				$('.btn-help').click(function () {
+					ui_show_element('#help-board')
+				})
+				$('.btn-exit').click(function () {
+					destroy_all()
+					ui_show_element('#credit-page')
+					setTimeout(function () {
+						ui_hide_element('#credit-page')
+						ui_show_element('#en-logo-video')
+						let logoVideo = document.getElementById('en-logo-video')
+						logoVideo.addEventListener('ended', function () {
+							ui_hide_element('#en-logo-video')
+							window.close()
+						})
+						logoVideo.play()
+					}, 5000)
+				})
+
+
+				$('.btn-page-nav').hover(function () {
+					this.src = 'Assets/common/button_page_h.png'
+				}, function () {
+					this.src =  'Assets/common/button_page.png'
+				})
+				$('.btn-p2s.enable').hover(function () {
+					var btnVal = $(this).attr('data-val')
+					this.src = (btnVal == 'play') ? 'Assets/common/button_play_h.png' : 'Assets/common/button_play_pause_h.png'
+				}, function () {
+					var btnVal = $(this).attr('data-val')
+					this.src = (btnVal == 'play') ? 'Assets/common/button_play.png' : 'Assets/common/button_play_pause.png'
+				})
+				$('.btn-prev.enable').hover(function () {
+					this.src = 'Assets/common/button_play_back_h.png'
+				}, function () {
+					this.src = 'Assets/common/button_play_back.png'
+				})
+				$('.btn-next.enable').hover(function () {
+					this.src = 'Assets/common/button_play_next_h.png'
+				}, function () {
+					this.src = 'Assets/common/button_play_next.png'
+				})
+				$('.btn-font.enable').hover(function () {
+					var btnVal = $(this).attr('data-val')
+					if (btnVal == 'small')
+						this.src = 'Assets/common/button_play_font_h.png'
+					else if (btnVal == 'medium')
+						this.src = 'Assets/common/button_play_font_med_h.png'
+					else if (btnVal == 'large')
+						this.src = 'Assets/common/button_play_font_lar_h.png'
+				}, function () {
+					var btnVal = $(this).attr('data-val')
+					if (btnVal == 'small')
+						this.src = 'Assets/common/button_play_font.png'
+					else if (btnVal == 'medium')
+						this.src = 'Assets/common/button_play_font_med.png'
+					else if (btnVal == 'large')
+						this.src = 'Assets/common/button_play_font_lar.png'
+				})
+				$('.btn-speed.enable').hover(function () {
+					var btnVal = $(this).attr('data-val')
+					if (btnVal == 'slow')
+						this.src = 'Assets/common/button_play_speed_1_h.png'
+					else if (btnVal == 'normal')
+						this.src = 'Assets/common/button_play_speed_2_h.png'
+				}, function () {
+					var btnVal = $(this).attr('data-val')
+					if (btnVal == 'slow')
+						this.src = 'Assets/common/button_play_speed_1.png'
+					else if (btnVal == 'normal')
+						this.src = 'Assets/common/button_play_speed_2.png'
+				})
+				$('.btn-slider.enable').hover(function () {
+					var btnVal = $(this).attr('data-val')
+					if (btnVal == 'obo')
+						this.src = 'Assets/common/button_play_slider_l_h.png'
+					else if (btnVal == 'all')
+						this.src = 'Assets/common/button_play_slider_r_h.png'
+				}, function () {
+					var btnVal = $(this).attr('data-val')
+					if (btnVal == 'obo')
+						this.src = 'Assets/common/button_play_slider_l.png'
+					else if (btnVal == 'all')
+						this.src = 'Assets/common/button_play_slider_r.png'
+				})
+				$('.btn-help').hover(function () {
+					this.src = 'Assets/common/button_help_h.png'
+				}, function () {
+					this.src = 'Assets/common/button_help.png'
+				})
+				$('.btn-exit').hover(function () {
+					this.src = 'Assets/common/button_exit_h.png'
+				}, function () {
+					this.src = 'Assets/common/button_exit.png'
+				})
+			}
+			function init_font_option () {
+				$('#font-options #small').click(function () {
+					gFontSize = 'small'
+					$('#book-story-page #section-board #body .text-block span').css('font-size', font_size())
+					control_bar()
+				})
+				$('#font-options #medium').click(function () {
+					gFontSize = 'medium'
+					$('#book-story-page #section-board #body .text-block span').css('font-size', font_size())
+					control_bar()	
+				})
+				$('#font-options #large').click(function () {
+					gFontSize = 'large'
+					$('#book-story-page #section-board #body .text-block span').css('font-size', font_size())
+					control_bar()
+				})
+			}
+			function init_speed_option () {
+				$('#speed-options #slow').click(function () {
+					gAudioPlaySpeed = 'slow'
+					section_board(gPresentBox)
+					gAudioPlayStatus = 'play'
+					control_bar()
+					audPlayerForSec.pause()
+				})
+				$('#speed-options #normal').click(function () {
+					gAudioPlaySpeed = 'normal'
+					section_board(gPresentBox)
+					gAudioPlayStatus = 'play'
+					control_bar()
+					audPlayerForSec.pause()
+				})
+			}
+			function page_nav_btn () {
+				ui_show_element('#page-nav')
+				ui_show_element('#page-nav #btn-prev')
+				ui_show_element('#page-nav #btn-next')
+				if (is_on_first_page())
+					ui_hide_element('#page-nav #btn-prev')
+				if (is_on_last_page())
+					ui_hide_element('#page-nav #btn-next')
+			}
+			function init_page_nav_btn () {
+				$('#page-nav #btn-prev').click(function () {
+					gPresentPage = dec_page()
+					init_page_props()
+					draw_page()
+				})
+				$('#page-nav #btn-next').click(function () {
+					if (gPresentPage && is_on_last_page(gPresentPage.chapter)) {
+						audPlayerForCommon.src = "Assets/C1C/aud/C1C_End.mp3"
+						audPlayerForCommon.play()
+						ui_show_element('#chapter-end-board')
+					} else {
+						gPresentPage = inc_page()
+						init_page_props()
+						draw_page()
+					}
+				})
+				$('#page-nav #btn-prev').hover(function () { 
+					this.src = "Assets/common/button_back_h.png"
+				}, function () {
+					this.src = "Assets/common/button_back.png"
+				})
+				$('#page-nav #btn-next').hover(function () {
+					this.src = "Assets/common/button_next_h.png"
+				}, function () {
+					this.src = "Assets/common/button_next.png"
+				})
+			}
+			function is_on_first_page () {
+				if (gPresentPage == null)
+					return true
+				return false
+			}
+			function is_on_last_page (chapter = null) {
+				if (chapter) {
+					if (gPresentPage == null)
+						return false
+					var pChapter = gPresentPage.chapter
+					var pPart = gPresentPage.part
+					var pPage = gPresentPage.page
+					if (chapter != pChapter)
+						return false
+					var pInfo = storyContent[pChapter][pPart]['pages'][pPage]
+					if (!pInfo.chapter_end)
+						return false
+					return true
+				}
+
+				if (!inc_page())
+					return true
+				return false
+			}
+
+			function init_page_props () {
+				if (gPopup) {
+					close_section_board()
+				}
+				stop_audio()
+			}
+			function inc_page () {
+				if (gPresentPage == null)
+					return {chapter: 'C1', part: 'A', page: 0}
+
+				var chapter = gPresentPage.chapter
+				var part = gPresentPage.part
+				var page = gPresentPage.page
+				page++
+				if (page > storyContent[chapter][part]['pages'].length - 1) {
+					page = 0
+					part = String.fromCharCode(part.charCodeAt(0) + 1)
+					if (!storyContent[chapter][part]) {
+						part = 'A'
+						chapter = 'C' + (parseInt(chapter.split('C')[1]) + 1)	
+						if (!storyContent[chapter])
+							return false
+					}
+				}
+				return {chapter: chapter, part: part, page: page}
+			}	
+			function dec_page () {
+				var chapter = gPresentPage.chapter
+				var part = gPresentPage.part
+				var page = gPresentPage.page
+				page--
+				if (page < 0) {
+					part = String.fromCharCode(part.charCodeAt(0) - 1)
+					if (!storyContent[chapter][part]) {
+						chapter = 'C' + (parseInt(chapter.split('C')[1]) - 1)
+						if (!storyContent[chapter]) {
+							return null
+						} else {
+							var keys = Object.keys(storyContent[chapter])
+							part = keys[keys.length - 1]
+						} 
+					} 
+					page = storyContent[chapter][part]['pages'].length - 1
+				}
+				return {chapter: chapter, part: part, page: page}
+			}
+
+			function draw_page () {
+				if (gPresentPage == null) {
+					toc_page()
+					return
+				}
+				var chapter = gPresentPage.chapter
+				var part = gPresentPage.part
+				var page = gPresentPage.page
+				var pInfo = storyContent[chapter][part]['pages'][page]
+				var pData = pInfo.data
+				var pType = pInfo.type
+
+				ui_hide_element('#toc-page')
+				ui_empty_element('#book-story-page')
+
+				page_nav_btn()
+				control_bar()
+
+				if (pType == 'intro') {
+					var syncData = pData.content.text_data
+					// Topic Header Element
+					var topicHeader = document.createElement('img')
+					topicHeader.id = 'intro-header'
+					topicHeader.setAttribute('src', pData.topic.img)
+					ui_append_element('#book-story-page', topicHeader)
+					// Topic Body Element
+					var topicBody = document.createElement('div')
+					topicBody.id = 'intro-body'
+					ui_append_element('#book-story-page', topicBody)
+
+					var txtBlock = document.createElement('div')
+					txtBlock.setAttribute('class', 'text-block')
+					for (var sInx = 0; sInx < syncData.length; sInx++) {
+						var segment = document.createElement('span')
+						if (!syncData[sInx])
+							console.log('###########', sInx)
+						segment.innerText = syncData[sInx].text
+						txtBlock.appendChild(segment)
+						if (syncData[sInx].para_end) {
+							var br1 = document.createElement('br')
+							var br2 = document.createElement('br')
+							txtBlock.appendChild(br1)
+							txtBlock.appendChild(br2)
+						}
+						if (syncData[sInx].img)
+							topicBody.style.height = '60vh'
+					}
+					ui_append_element(topicBody, txtBlock)
+					var imgBlock = document.createElement('div')
+					imgBlock.setAttribute('class', 'image-block')
+					ui_append_element(topicBody, imgBlock)
+					// Play audio
+					stop_audio()
+					audPlayerForIntro.src = pData.content.audio_data
+
+					var prevInx = -1
+					audPlayerForIntro.ontimeupdate = function () {
+						for (var sInx in syncData) {
+							var sInfo = syncData[sInx]
+							if (!sInfo)
+								return
+							if (audPlayerForIntro.currentTime >= sInfo.start_time && audPlayerForIntro.currentTime <= sInfo.end_time) {
+								for (var ii = parseInt(prevInx) + 1; ii <= sInx; ii++) {
+									sInfo = syncData[ii]
+									console.log(ii)
+									if (sInfo.img) {
+										if ($('.img-pp.fade-in[src="' + sInfo.img + '"').length == 0) {
+											var imgElement = document.createElement('img')
+											imgElement.setAttribute('class', 'img-pp fade-in')
+											imgElement.setAttribute('src', sInfo.img)
+											imgBlock.appendChild(imgElement)
+										}
+									}
+									$(txtBlock).children('span').eq(ii).css('color', 'blue')
+								}
+								prevInx = sInx
+							}
+						}
+					}
+					audPlayerForIntro.play()
+				}
+				else if (pType == 'vocab') {
+					audPlayerForvocab.src = pData.bg_audio
+					audPlayerForvocab.play()
+					var vocabHeader = document.createElement('img')
+					vocabHeader.id='vocab-header'
+					vocabHeader.src = 'Assets/C1A/img/C1A_Vocab_top.png'
+					ui_append_element('#book-story-page', vocabHeader)
+					var vocabList = document.createElement('div')
+					vocabList.id = 'vocab-list'
+					var vocabListTitle = document.createElement('img')
+					vocabListTitle.id = 'vocab-list-title'
+					vocabListTitle.src = 'Assets/common/Vocab_words.png'
+					var divWrapper = document.createElement('div')
+					divWrapper.appendChild(vocabListTitle)
+					vocabList.appendChild(divWrapper)
+					for (var wInx in pData.words) {
+						var wInfo = pData.words[wInx]
+						var vocabItem = document.createElement('img')
+						vocabItem.setAttribute('class', 'buttons vocab-button')
+						vocabItem.setAttribute('data-id', wInx)
+						vocabItem.src = wInfo.side_btn_img
+						var divWrapper = document.createElement('div')
+						divWrapper.appendChild(vocabItem)
+						vocabList.appendChild(divWrapper)
+					}
+					ui_append_element('#book-story-page', vocabList)
+					var vocabDescription = document.createElement('div')
+					vocabDescription.id = 'vocab-description'
+					var detailImage = document.createElement('img')
+					detailImage.id = 'img-vocab-detail'
+					var txtBlock = document.createElement('div')
+					txtBlock.setAttribute('class', 'text-block')
+					vocabDescription.appendChild(detailImage)
+					vocabDescription.appendChild(txtBlock)
+					ui_append_element('#book-story-page', vocabDescription)
+					$('#vocab-list .vocab-button').click(function () {
+						$('#vocab-list .vocab-button').removeClass('active')
+						$(this).addClass('active')
+						ui_empty_element(vocabDescription)
+						ui_empty_element(txtBlock)
+						var wInfo = pData.words[$(this).attr('data-id')]
+						var syncData = wInfo.text_data
+						detailImage.src = wInfo.detail_img
+						for (var sInx in syncData) {
+							var segment = document.createElement('span')
+							segment.innerText = syncData[sInx].text
+							if (syncData[sInx].italic)
+								segment.style.fontStyle = 'italic'
+							txtBlock.appendChild(segment)
+						}
+						vocabDescription.appendChild(detailImage)
+						vocabDescription.appendChild(txtBlock)
+
+						stop_audio()
+						audPlayerForvocab.src = wInfo.audio_data
+
+						var prevInx = -1
+						audPlayerForvocab.ontimeupdate = function () {
+							for (var sInx in syncData) {
+								var sInfo = syncData[sInx]
+								if (!sInfo)
+									return
+								if (audPlayerForvocab.currentTime >= sInfo.start_time && audPlayerForvocab.currentTime <= sInfo.end_time) {
+									for (var ii = parseInt(prevInx) + 1; ii <= sInx; ii++)
+										$(txtBlock).children('span').eq(ii).css('color', 'blue')
+									prevInx = sInx
+								}
+							}
+						}
+						audPlayerForvocab.play()
+					})
+				}
+				else if (pType == 'land') {
+					var boardElement = '<div id="story-board"></div>'
+
+					ui_append_element('#book-story-page', boardElement)
+
+					boardElement = $('#story-board')
+					boardElement.css('background-image', 'url("' + pData.bg_img + '")')
+
+					$('#story-board').css('background-image', 'url("' + pData.bg_img + '")')
+					for (var bInx = 0; bInx < pData.boxes.length; bInx++)
+					{
+						var box = pData.boxes[bInx]
+						var boxElement = '<div class="section-box" box="' + bInx + '"></div>'
+						ui_append_element('#story-board', boxElement)
+
+						boxElement = $('.section-box[box="' + bInx + '"]')
+						boxElement.css('position', 'absolute')
+						boxElement.css('top', box.pos.y + 'vh')
+						boxElement.css('left', box.pos.x + 'vw')
+						boxElement.css('width', box.pos.width + 'vw')
+						boxElement.css('height', box.pos.height + 'vh')
+					}
+
+					boardElement = '<div id="section-board"></div>'
+					ui_append_element('#book-story-page', boardElement)
+
+					$('.section-box').click(function () {
+						gPopup = true
+						var box = $(this).attr('box')
+						section_board(box)
+					})
+				}
+			}
+			function is_on_last_section () {
+				if (gPresentPage == null)
+					return false
+				var chapter = gPresentPage.chapter
+				var part = gPresentPage.part
+				var page = gPresentPage.page
+				var pInfo = storyContent[chapter][part]['pages'][page]
+				var pData = pInfo.data
+				var pType = pInfo.type
+				if (pType != 'land')
+					return false
+				if (gPresentBox == pData.boxes.length - 1)
+					return true
+				return false
+			}
+			function is_on_first_section () {
+				if (gPresentPage == null)
+					return false
+				var chapter = gPresentPage.chapter
+				var part = gPresentPage.part
+				var page = gPresentPage.page
+				var pInfo = storyContent[chapter][part]['pages'][page]
+				var pData = pInfo.data
+				var pType = pInfo.type
+				if (pType != 'land')
+					return false
+				if (gPresentBox == 0)
+					return true
+				return false
+			}
+			function section_board (box) {
+				var chapter = gPresentPage.chapter
+				var part = gPresentPage.part 
+				var page = gPresentPage.page
+				var pInfo = storyContent[chapter][part]['pages'][page]
+				var pData = pInfo.data
+
+				if (box >= pData.boxes.length)
+					return -1
+				var boxInfo = pData.boxes[box]
+				if (!boxInfo)
+					return 0
+
+				gPresentBox = box
+
+				gAudioPlayStatus = 'pause'
+				control_bar()
+
+				var syncData = boxInfo.text_data[gAudioPlaySpeed]
+				var audioData = boxInfo.audio_data[gAudioPlaySpeed]
+
+				var sectionBoard = document.getElementById('section-board')
+				ui_empty_element(sectionBoard)
+
+				var ovlPanel = document.createElement('div')
+				ovlPanel.setAttribute('class', 'overlay')
+				ui_append_element(sectionBoard, ovlPanel)
+
+				 
+				var closeButton = document.createElement('input')
+				closeButton.id = 'btn-close-popup'
+				closeButton.setAttribute('type', 'image')
+				closeButton.setAttribute('class', 'buttons')
+				closeButton.setAttribute('src', 'Assets/common/button_close.png')
+				ui_append_element(sectionBoard, closeButton)
+				
+				var contentBody = document.createElement('div')
+				contentBody.id = 'body'
+				contentBody.style.backgroundImage = 'url(' + boxInfo.bg_img + ')' 
+				var txtBlock = document.createElement('div')
+				txtBlock.setAttribute('class', 'text-block')
+				for (var sInx = 0; sInx < syncData.length; sInx++) {
+					var segment = document.createElement('span')
+					if (!syncData[sInx])
+						console.log('############', sInx)
+					if (syncData[sInx].header) {
+						segment.style.fontWeight = "bold"
+						// segment.style.color = "#04A1CB"
+					}
+					if (syncData[sInx].italic)
+						segment.style.fontStyle = 'italic'
+					segment.style.fontSize = font_size()
+					segment.innerText = syncData[sInx].text.replace('#', '"')
+					txtBlock.appendChild(segment)
+					if (syncData[sInx].para_end) {
+						var br1 = document.createElement('br')
+						var br2 = document.createElement('br')
+						txtBlock.appendChild(br1)
+						txtBlock.appendChild(br2)
+					}
+				}
+				contentBody.appendChild(txtBlock)
+				var imgBlock = document.createElement('div')
+				imgBlock.setAttribute('class', 'image-block')
+
+				if (boxInfo.img_data && boxInfo.img_data.length > 0)
+				{
+					for (var iInx in boxInfo.img_data) {
+						var imgElement = document.createElement('img')
+						imgElement.setAttribute('class', 'img-static')
+						imgElement.setAttribute('src', boxInfo.img_data[iInx])
+						imgBlock.appendChild(imgElement)
+					}
+				}
+				contentBody.appendChild(imgBlock)
+
+				if (boxInfo.bg_img.includes('textbox_2.png') || 
+					boxInfo.bg_img.includes('textbox_3.png') ||
+					boxInfo.bg_img.includes('textbox_10.png')) {
+					contentBody.style.width = '85vw'
+					contentBody.style.top = '3vh'
+					txtBlock.style.position = 'absolute'
+					txtBlock.style.top = '10vh'
+					txtBlock.style.left = '8vw'	
+
+					imgBlock.style.left = '3vw'
+				}
+
+				ui_append_element(sectionBoard, contentBody)
+
+				stop_audio()				
+				audPlayerForSec.src = audioData
+
+				var prevInx = -1
+				audPlayerForSec.ontimeupdate = function () {
+					for (var sInx in syncData) {
+						var sInfo = syncData[sInx]
+						if (!sInfo)
+							return
+						if (audPlayerForSec.currentTime >= sInfo.start_time && audPlayerForSec.currentTime <= sInfo.end_time) {
+							for (var ii = parseInt(prevInx) + 1; ii <= sInx; ii++) {
+								sInfo = syncData[ii]
+								if (sInfo.img) {
+									if ($('.img-pp.fade-in[src="' + sInfo.img + '"').length == 0) {
+										var imgElement = document.createElement('img')
+										imgElement.setAttribute('class', 'img-pp fade-in')
+										imgElement.setAttribute('src', sInfo.img)
+										imgBlock.appendChild(imgElement)
+									}
+								}
+								$(txtBlock).children('span').eq(ii).css('color', 'blue')
+							}
+							prevInx = sInx
+						}
+					}
+				}
+				audPlayerForSec.play()
+				bDone = false
+				audPlayerForSec.onended = function () {
+					if (gAudioPlayMode == 'all') {
+						bDone = section_board(parseInt(box) + 1) == -1
+						if (bDone) {
+							$('#btn-close-popup').click()
+							if ($('#page-nav #btn-next').css('display') != 'none')
+								$('#page-nav #btn-next').attr('src','Assets/common/button_next_glow.gif')
+						}
+					} else {
+						for (var sInx in syncData) {
+							var sInfo = syncData[sInx]
+							if (sInfo.vocab) {
+								$(txtBlock).children('span').eq(sInx).addClass('vocab-word')
+								$(txtBlock).children('span').eq(sInx).attr('data-index', sInx)
+								$(txtBlock).children('span').eq(sInx).css('color', '#00CED1')
+							}
+						}
+
+						$('.vocab-word').click(function () {
+							var sInfo = syncData[$(this).attr('data-index')]
+							stop_audio()
+							audPlayerForvocab.src = sInfo.vocab
+							audPlayerForvocab.play()
+						})
+						bDone = true
+						gAudioPlayStatus = 'play'
+						control_bar()
+					}
+				}
+
+				$('#btn-close-popup').click(function () {
+					close_section_board()
+					control_bar()
+				})
+			}	
+			function close_section_board () {
+				gPopup = false
+				ui_empty_element('#section-board')
+				stop_audio()
+				gAudioPlayStatus = 'pause'
+				bDone = false
+				gPresentBox = 0
+			}
+			function chapter_frames (chapter = null) {
+				$('#chapter-frames-content .btn-frame').removeClass('active')
+				if (!chapter)
+					chapter = gPresentPage ? gPresentPage.chapter : 'C1'
+				if (chapter == 'C1') {
+					$('#chapter-frames-content .btn-frame[data-chapter="C2"]').hide()
+					$('#chapter-frames-content .btn-frame[data-chapter="C1"]').show()
+					$('#chapter-frames-header #img-chapter').attr('src', 'Assets/page/head_C1.png')
+					$('#chapter-frames-header #btn-chapter').attr('src', 'Assets/page/but_c1.png')
+				} else if (chapter == 'C2') {
+					$('#chapter-frames-content .btn-frame[data-chapter="C1"]').hide()
+					$('#chapter-frames-content .btn-frame[data-chapter="C2"]').show()
+					$('#chapter-frames-header #img-chapter').attr('src', 'Assets/page/head_C2.png')
+					$('#chapter-frames-header #btn-chapter').attr('src', 'Assets/page/but_c2.png')
+				}
+				$('#chapter-frames-header #btn-chapter').attr('data-chapter', chapter)
+				if (gPresentPage) {
+					$('#chapter-frames-content .btn-frame').each(function (index) {
+						if ($(this).attr('data-page') == JSON.stringify(gPresentPage))
+							$(this).addClass('active')
+					})
+				}
+			}
+			function init_chapter_frames () {
+				ui_empty_element('#chapter-frames-content')
+				for (var chapter in storyContent) {
+					var partList = storyContent[chapter]
+					for (var part in partList) {
+						var pageList = partList[part]['pages']
+						for (var page in pageList) {
+							var frameElement = document.createElement('input')
+							frameElement.setAttribute('type', 'image')
+							frameElement.setAttribute('data-page', JSON.stringify({chapter: chapter, part: part, page: parseInt(page)}))
+							frameElement.setAttribute('data-chapter', chapter)
+							frameElement.setAttribute('src', pageList[page].frm_img)
+							frameElement.setAttribute('class', 'buttons btn-frame')
+							ui_append_element('#chapter-frames-content', frameElement)
+						}
+					}
+				}
+
+				$('#chapter-frames-header .btn-close').click(function () {
+					ui_hide_element('#chapter-frames')
+				})
+				$('#chapter-frames-header #btn-toc').click(function () {
+					ui_hide_element('#chapter-frames')
+					gPresentPage = null
+					init_page_props()
+					draw_page()
+				})
+				$('#chapter-frames-header #btn-chapter').click(function () {
+					var chapter = $(this).attr('data-chapter')
+					chapter = chapter == 'C1' ? 'C2' : 'C1'
+					chapter_frames(chapter)
+				})
+				$('#chapter-frames-content .btn-frame').click(function () {
+					ui_hide_element('#chapter-frames')
+					gPresentPage = JSON.parse($(this).attr('data-page'))
+					init_page_props()
+					draw_page()
+				})
+			}
+			function init_help_board () {
+				$('#help-board .btn-close').click(function () {
+					ui_hide_element('#help-board')
+				})
+			}
+			function init_c_end_board () {
+				$('#chapter-end-board .btn-close').click(function () {
+					stop_audio()
+					ui_hide_element('#chapter-end-board')
+				})
+				$('#chapter-end-board #btn-c1-intro').click(function () {
+					ui_hide_element('#chapter-end-board')
+					gPresentPage = {chapter: 'C1', part: 'A', page: 0}
+					init_page_props()
+					draw_page()
+				})
+				$('#chapter-end-board #btn-c2-intro').click(function () {
+					ui_hide_element('#chapter-end-board')
+					gPresentPage = {chapter: 'C2', part: 'A', page: 0}
+					init_page_props()
+					draw_page()
+				})
+				$('#chapter-end-board #btn-credit').click(function () {
+					$('#control-panel .btn-exit').click()
+				})
+			}
+			function destroy_all () {
+				init_page_props()
+
+				ui_empty_element('#start-page')
+				ui_empty_element('#cover-page')
+				ui_empty_element('#toc-page')
+				ui_empty_element('#book-story-page')
+				ui_empty_element('#help-board')
+				ui_empty_element('#chapter-frames')
+				ui_empty_element('#control-bar')
+				ui_empty_element('#page-nav')
+				ui_empty_element('#chapter-end-board')
+			}
+			init_control_bar()
+			init_page_nav_btn()
+			init_speed_option()
+			init_font_option()
+
+			init_chapter_frames()
+
+			init_help_board()
+			init_c_end_board()
+
+			function init_window () {
+				window.addEventListener('click', function (e) {
+					if (winActiveSupervisor) {
+						clearInterval(winActiveSupervisor)
+					}
+					activateTime = 0
+					winActiveSupervisor = setInterval(function () {
+						if (++ activateTime >= 10)
+						{
+							activateTime = 0
+							clearInterval(winActiveSupervisor)
+							if ($('#control-panel').css('display') != 'none')
+								$('.btn-ctrl-menu').click()
+						}
+					}, 1000)
+				})
+			}
+			init_window()
+
+			function font_size() {
+				if (gFontSize == 'small')
+					return 24
+				else if (gFontSize == 'medium')
+					return 27
+				else if (gFontSize == 'large')
+					return 30
+				return 24	
+			}
+		})
+	</script>
+</html>

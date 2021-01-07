@@ -1,0 +1,552 @@
+@font-face {
+    font-family: 'Century Gothic';
+    src: url('../Assets/font/Century_Gothic/converted/GOTHIC/CenturyGothic.eot');
+    src: url('../Assets/font/Century_Gothic/converted/GOTHIC/CenturyGothic.eot?#iefix') format('embedded-opentype'),
+        url('../Assets/font/Century_Gothic/converted/GOTHIC/CenturyGothic.woff2') format('woff2'),
+        url('../Assets/font/Century_Gothic/converted/GOTHIC/CenturyGothic.woff') format('woff'),
+        url('../Assets/font/Century_Gothic/converted/GOTHIC/CenturyGothic.ttf') format('truetype'),
+        url('../Assets/font/Century_Gothic/converted/GOTHIC/CenturyGothic.svg#CenturyGothic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Comic Sans';
+    src: url('../Assets/font/Comic_Sans/converted/comicsans/ComicSansMS.eot');
+    src: url('../Assets/font/Comic_Sans/converted/comicsans/ComicSansMS.eot?#iefix') format('embedded-opentype'),
+        url('../Assets/font/Comic_Sans/converted/comicsans/ComicSansMS.woff2') format('woff2'),
+        url('../Assets/font/Comic_Sans/converted/comicsans/ComicSansMS.woff') format('woff'),
+        url('../Assets/font/Comic_Sans/converted/comicsans/ComicSansMS.ttf') format('truetype'),
+        url('../Assets/font/Comic_Sans/converted/comicsans/ComicSansMS.svg#ComicSansMS') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Comic Sans Bold';
+    src: url('../Assets/font/Comic_Sans/converted/comicsans_bold/ComicSansMS-Bold.eot');
+    src: url('../Assets/font/Comic_Sans/converted/comicsans_bold/ComicSansMS-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../Assets/font/Comic_Sans/converted/comicsans_bold/ComicSansMS-Bold.woff2') format('woff2'),
+        url('../Assets/font/Comic_Sans/converted/comicsans_bold/ComicSansMS-Bold.woff') format('woff'),
+        url('../Assets/font/Comic_Sans/converted/comicsans_bold/ComicSansMS-Bold.ttf') format('truetype'),
+        url('../Assets/font/Comic_Sans/converted/comicsans_bold/ComicSansMS-Bold.svg#ComicSansMS-Bold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Comic Sans Italic';
+    src: url('../Assets/font/Comic_Sans/converted/comicsans_italics/ComicSansMS-Italic.eot');
+    src: url('../Assets/font/Comic_Sans/converted/comicsans_italics/ComicSansMS-Italic.eot?#iefix') format('embedded-opentype'),
+        url('../Assets/font/Comic_Sans/converted/comicsans_italics/ComicSansMS-Italic.woff2') format('woff2'),
+        url('../Assets/font/Comic_Sans/converted/comicsans_italics/ComicSansMS-Italic.woff') format('woff'),
+        url('../Assets/font/Comic_Sans/converted/comicsans_italics/ComicSansMS-Italic.ttf') format('truetype'),
+        url('../Assets/font/Comic_Sans/converted/comicsans_italics/ComicSansMS-Italic.svg#ComicSansMS-Italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Comic Sans Bold Italic';
+    src: url('../Assets/font/Comic_Sans/converted/comicsans_bold_italics/ComicSansMS-BoldItalic.eot');
+    src: url('../Assets/font/Comic_Sans/converted/comicsans_bold_italics/ComicSansMS-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('../Assets/font/Comic_Sans/converted/comicsans_bold_italics/ComicSansMS-BoldItalic.woff2') format('woff2'),
+        url('../Assets/font/Comic_Sans/converted/comicsans_bold_italics/ComicSansMS-BoldItalic.woff') format('woff'),
+        url('../Assets/font/Comic_Sans/converted/comicsans_bold_italics/ComicSansMS-BoldItalic.ttf') format('truetype'),
+        url('../Assets/font/Comic_Sans/converted/comicsans_bold_italics/ComicSansMS-BoldItalic.svg#ComicSansMS-BoldItalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+.buttons{
+	outline:none;
+}
+.show-none {
+	display: none;
+}
+.background-panel {
+	background-size: cover;
+	height:100vh;
+	width:100%;
+}
+#credit-page .background-panel {
+	background-image: url('../Assets/common/credits.png');
+}
+#start-page .background-panel {
+	background-image: url('../Assets/common/XY_black_background.jpg');
+}
+#start-page #btn-play-logo-video {
+	position: absolute;
+	top: 40vh;
+	left: 45vw;
+	height: 20vh;
+}
+.logo-video {
+	width: 100vw;
+	height: 100vh;
+}
+
+#cover-page .background-panel {
+	background-image: url('../Assets/common/bg.png');
+}
+
+#cover-page #img-cover {
+	position: absolute;
+	top: 10vh;
+	left: 20%;
+	height: 60vh;
+	width: 60%;
+}
+#cover-page #btn-enter {
+	height: 8vh;
+}
+#cover-page .enter-wrapper {
+	position: absolute;
+	top:80vh;
+	width:100%;
+}
+#toc-page .background-panel {
+	background-image: url('../Assets/common/bg.png');	
+}
+
+#toc-page #toc {
+	position: absolute;
+	top: 6vh;
+	left: 10vw;	
+}
+#toc-page #toc-contents {
+	position: absolute;
+	top: 11vh;
+	left: 2vw;
+	width: 32vw;
+}
+#toc-page #bg-toc {
+	position: absolute;
+	top: 3vh;
+	height: 95vh;
+	width: 80%;
+	left: 10%;
+	right: 10%;
+}
+
+#toc-page #img-textbook-cover {
+	position: absolute;
+	top: 3vh;
+	left: 50%;
+	height: 95vh;
+	width: 40%;
+}
+
+#toc-page .ch-title {
+	font-family: "Century Gothic";
+	font-weight: bold; 
+	font-size: 1.7vw;
+	padding-bottom: 1vh;
+}
+
+#toc-page .toc-buttons {
+	cursor: pointer;
+	font-family: "Century Gothic";
+	font-size: 1.2vw;
+	padding-top: 1vh;
+	padding-bottom: 1vh;
+	padding-left: 1vw;
+}
+
+#toc-page .toc-buttons:hover {
+	color: blue;
+}
+
+#page-nav #btn-next {
+	position: absolute;
+	bottom: 1vh;
+	height: 8vh;
+	right: 5vw;
+	z-index: 1;
+	margin-bottom: 20px;
+}
+
+#page-nav #btn-prev {
+	position: absolute;
+	bottom: 1vh;
+	height: 8vh;
+	left: 5vw;
+	z-index: 1;
+	margin-bottom: 20px;
+}
+
+#control-bar {
+	position: absolute;
+	bottom: 1vh;
+	left: 10%;
+	width: 80%;
+	padding: 20px;
+	z-index: 1;
+}
+
+#control-bar #control-panel .d-flex {
+	justify-content: space-around;
+}
+#control-bar #control-panel {
+	background-image: url('../Assets/common/button_bar.png');
+	background-repeat:no-repeat;
+	background-size:100% 100%;
+	width: 91%;
+	padding: 5px;
+	margin-left: 5px;
+}
+#control-bar .btn-ctrl-menu {
+	margin-top: 5px;
+}
+#control-bar .buttons {
+	height: 7vh;
+}
+
+#intro-header {
+	position: absolute;
+	width: 80vw;
+	top: 3vh;
+	left: 10vw;
+	right: 10vw;
+}
+#intro-body {
+	background-image: url('../Assets/C1A/img/C1A_Key.png');
+	background-repeat:no-repeat;
+	background-size:100% 100%;
+	position: absolute;
+	width: 80vw;
+	top: 20vh;
+	left: 10vw;
+	right: 10vw;
+	padding: 20px;
+	/*text-align: center;*/
+	font-family: "Comic Sans";
+	font-size: 1.9vw;
+	font-weight: bold;
+}
+#intro-body span {
+	vertical-align: middle;
+}
+
+#book-story-page #story-board .section-box {
+	cursor: url('../Assets/common/cursor_mag.png'), auto;
+}
+
+#book-story-page #story-board {
+	background-size:100% 100%;
+	background-repeat:no-repeat;
+	position: absolute;
+	top: 3vh;
+	height: 95vh;
+	width: 80vw;
+	left: 10vw;
+	right: 10vw;
+}
+#book-story-page #section-board .overlay {
+	z-index: 0;
+}
+
+.overlay {
+	background-image: url('../Assets/common/overlay.png');
+	background-size: cover;		
+	position: absolute;
+	top: 0vh;
+	height:100vh;
+	width:100vw;		
+	opacity: 0.8;	
+}
+#book-story-page #section-board #body {
+	position: absolute;
+	top:10vh;
+	right: 10vw;
+	background-image: url('../Assets/common/textbox.png');	
+	background-size: cover;
+	width: 80vw;
+	height: 66vh;
+}
+
+#book-story-page #section-board #btn-close-popup {
+	position: absolute;
+	height: 50px;
+	right: 3vw;
+	top:  10vh;
+}
+
+.text-block {
+	padding: 30px;
+	font-family: "Comic Sans";
+}
+.image-block {
+	position: absolute;
+    width: 100%;
+    bottom: 8vh;
+    left: 0%;
+    height: 20vh;
+    padding: 10px;
+    margin: auto;
+    text-align: center;
+}
+
+.img-pp {
+	display: none;
+	height: 25vh;
+	padding: 10px;
+}
+.img-static {
+	height: 25vh;
+	padding: 10px;
+}
+#intro-body .img-pp {
+	margin: 0px 50px;
+}
+
+.img-pp.fade-in {
+	display: inline;
+	animation-name: fadeIn;
+	animation-duration: 2s;
+}
+
+@keyframes fadeIn {
+  	from {opacity: 0;}
+  	to {opacity: 1;}
+}
+
+.vocab-word {
+	color: #00CED1;
+	cursor: pointer;
+}
+
+
+#font-options {
+	background-image: url('../Assets/common/playback.png');
+	background-size: 100% 100%;
+	position: absolute;
+	height: 15vh;
+	width: 7vw;
+	padding-top: 1vh;
+    padding-bottom: 1vh;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    border-radius: 10px;
+}
+#font-options #small {
+	font-family: Century Gothic; 
+	color: white;
+	cursor: pointer;
+	font-size: 17;
+}
+
+#font-options #medium {
+	font-family: Century Gothic; 
+	color: white;
+	cursor: pointer;
+	font-size: 17;
+}
+
+#font-options #large {
+	font-family: Century Gothic; 
+	color: white;
+	cursor: pointer;
+	font-size: 18;
+}
+
+#speed-options {
+	background-image: url('../Assets/common/playback.png');
+	position: absolute;
+	height: 15vh;
+	width: 10vw;
+	padding-top: 1vh;
+    padding-bottom: 1vh;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    border-radius: 10px;
+}
+
+#speed-options #slow {
+	font-family: Century Gothic; 
+	color: white;
+	cursor: pointer;
+	font-size: 17;
+}
+
+#speed-options #normal {
+	font-family: Century Gothic; 
+	color: white;
+	cursor: pointer;
+	font-size: 17;
+}
+
+
+
+#chapter-frames-header {
+	position: absolute;
+	top: 1vh;
+	left: 10vw;
+	right: 10vw;
+	z-index: 2;
+}
+
+#chapter-frames-header #img-chapter {
+	top: 3vh;
+	height: 8vh;
+	width: 79.5vw;
+}
+
+#chapter-frames-header .btn-close {
+	position: absolute;
+	top: 1px;
+	height: 60px;
+	z-index: 2;
+	right: -7vw;
+}
+
+#chapter-frames-header #btn-toc {
+	position: absolute;
+	top: 9vh;
+	height: 8vh;
+}
+#chapter-frames-header #btn-chapter{
+	position: absolute;
+	top: 9vh;
+	height: 8vh;
+	right: 0vw;
+}
+#chapter-frames-content {
+	position: absolute;
+	height:80vh;
+	width: 80vw;
+	top: 18vh;
+	left: 10vw;
+	right: 10vw;
+	z-index: 2;
+}
+
+#chapter-frames-content .btn-frame {
+	width: 16vw;
+	padding-top: 2vh;
+	padding-bottom: 2vh;
+	padding-left: 1.5vw;
+	padding-right: 1.5vw;
+}
+#chapter-frames-content .btn-frame.active {
+  	filter: brightness(0.5);
+}
+
+#chapter-frames-content .btn-frame:hover {
+  	filter: brightness(0.7) sepia(100%);
+}
+#chapter-frames-content.d-flex {
+	justify-content: space-around;
+}
+#chapter-frames .overlay {
+	z-index: 2;
+}
+
+#help-board .overlay {
+	z-index: 2
+}
+
+#help-board #img-help {
+	position: absolute;
+	top: 5vh;
+	left: 10vw;
+	width: 80vw;
+	z-index: 2;
+}
+
+#help-board .btn-close{
+	position: absolute;
+	top: 5vh;
+	height: 50px;
+	right: 5vw;
+	z-index: 2;
+}
+
+#vocab-header {
+	position: absolute;
+	width: 80vw;
+	top: 3vh;
+	left: 10vw;
+	right: 10vw;
+}
+
+#vocab-list {
+	position: absolute;
+	top: 12vh;
+	left: 10vw;
+}
+
+#vocab-list-title {
+	height:5vh;
+}
+
+#vocab-list .vocab-button {
+	height:5vh;
+	cursor: pointer;
+}
+#vocab-list .vocab-button.active {
+	filter: brightness(0.5);
+}
+#vocab-list .vocab-button:hover {
+	filter: brightness(0.7) sepia(100%);
+}
+#vocab-description {
+	position: absolute;
+	top: 17vh;
+	right: 10vw;
+	width: 50vw;
+}
+#vocab-description .text-block {
+	font-size: 2.4vh;
+	padding: 5px;
+}
+#vocab-description #img-vocab-detail {
+	width: 100%;
+	/*height: 50%;*/
+}
+
+
+#chapter-end-board #img-header {
+	top: 3vh;
+	width: 80vw;
+}
+
+#chapter-end-board .btn-close {
+	position: absolute;
+	top: 0vh;
+	height: 60px;
+	z-index: 2;
+	right: -7vw;
+}
+
+#chapter-end-board .overlay {
+	z-index: 2;
+}
+
+#chapter-end-board #header {
+	position: absolute;
+	top: 8vh;
+	left: 10vw;
+	right: 10vw;
+	z-index: 2;
+}
+
+#chapter-end-board .btn-group {
+	position: absolute;
+	width: 80vw;
+	top: 30vh;
+	left: 10vw;
+	right: 10vw;
+	z-index: 2;
+}
+#chapter-end-board .d-flex {
+	justify-content: space-around;
+}
+#chapter-end-board .btn-group .buttons:hover {
+  	filter: brightness(0.7) sepia(100%);
+}
